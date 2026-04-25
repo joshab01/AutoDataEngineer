@@ -1,0 +1,22 @@
+{
+  "source": "Synthetic (API fallback)",
+  "rows": 200,
+  "columns": [
+    "product_name",
+    "brands",
+    "categories",
+    "quantity",
+    "serving_size",
+    "energy_100g",
+    "fat_100g",
+    "sugars_100g",
+    "proteins_100g",
+    "nutrition_grade_fr",
+    "countries",
+    "last_modified_datetime",
+    "code",
+    "packaging"
+  ],
+  "null_total": 414,
+  "duplicate_rows": 18
+}

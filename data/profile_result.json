@@ -1,0 +1,374 @@
+{
+  "profiling_report": {
+    "total_rows": 200,
+    "total_columns": 14,
+    "issues_found": 10,
+    "summary": "The dataset exhibits several data quality issues, including missing values, inconsistent formats, and duplicates. These issues could impact data analysis and require attention to ensure data integrity.",
+    "issues": [
+      {
+        "column": "product_name",
+        "issue": "Null/missing values",
+        "severity": "medium",
+        "affected_rows": 8
+      },
+      {
+        "column": "brands",
+        "issue": "Null/missing values and inconsistent casing",
+        "severity": "medium",
+        "affected_rows": 21
+      },
+      {
+        "column": "categories",
+        "issue": "Null/missing values and inconsistent casing",
+        "severity": "high",
+        "affected_rows": 63
+      },
+      {
+        "column": "quantity",
+        "issue": "Null/missing values and inconsistent formats",
+        "severity": "high",
+        "affected_rows": 45
+      },
+      {
+        "column": "serving_size",
+        "issue": "Null/missing values and inconsistent formats",
+        "severity": "medium",
+        "affected_rows": 25
+      },
+      {
+        "column": "energy_100g",
+        "issue": "Null/missing values and mixed types",
+        "severity": "medium",
+        "affected_rows": 13
+      },
+      {
+        "column": "nutrition_grade_fr",
+        "issue": "Null/missing values",
+        "severity": "medium",
+        "affected_rows": 43
+      },
+      {
+        "column": "countries",
+        "issue": "Null/missing values",
+        "severity": "medium",
+        "affected_rows": 50
+      },
+      {
+        "column": "last_modified_datetime",
+        "issue": "Inconsistent date formats",
+        "severity": "high",
+        "affected_rows": 42
+      },
+      {
+        "column": "__duplicates__",
+        "issue": "Duplicate rows",
+        "severity": "high",
+        "affected_rows": 18
+      }
+    ]
+  },
+  "data_contract": {
+    "product_name": {
+      "expected_type": "string",
+      "nullable": true,
+      "format": null,
+      "constraints": null,
+      "cleaning_action": "fill nulls with 'Unknown'"
+    },
+    "brands": {
+      "expected_type": "string",
+      "nullable": true,
+      "format": null,
+      "constraints": "must be lowercase",
+      "cleaning_action": "trim whitespace and standardize casing to lowercase"
+    },
+    "categories": {
+      "expected_type": "string",
+      "nullable": true,
+      "format": null,
+      "constraints": null,
+      "cleaning_action": "fill nulls with 'Unknown' and standardize casing to lowercase"
+    },
+    "quantity": {
+      "expected_type": "string",
+      "nullable": true,
+      "format": null,
+      "constraints": null,
+      "cleaning_action": "standardize units to grams"
+    },
+    "serving_size": {
+      "expected_type": "string",
+      "nullable": true,
+      "format": null,
+      "constraints": null,
+      "cleaning_action": "standardize units to grams"
+    },
+    "energy_100g": {
+      "expected_type": "float",
+      "nullable": true,
+      "format": null,
+      "constraints": "must be positive",
+      "cleaning_action": "convert to float and fill nulls with 0"
+    },
+    "fat_100g": {
+      "expected_type": "float",
+      "nullable": true,
+      "format": null,
+      "constraints": "must be positive",
+      "cleaning_action": "convert to float and fill nulls with 0"
+    },
+    "sugars_100g": {
+      "expected_type": "float",
+      "nullable": true,
+      "format": null,
+      "constraints": "must be positive",
+      "cleaning_action": "convert to float and fill nulls with 0"
+    },
+    "proteins_100g": {
+      "expected_type": "float",
+      "nullable": true,
+      "format": null,
+      "constraints": "must be positive",
+      "cleaning_action": "convert to float and fill nulls with 0"
+    },
+    "nutrition_grade_fr": {
+      "expected_type": "string",
+      "nullable": true,
+      "format": null,
+      "constraints": null,
+      "cleaning_action": "fill nulls with 'unknown' and standardize casing to lowercase"
+    },
+    "countries": {
+      "expected_type": "string",
+      "nullable": true,
+      "format": null,
+      "constraints": null,
+      "cleaning_action": "fill nulls with 'Unknown' and standardize casing to uppercase"
+    },
+    "last_modified_datetime": {
+      "expected_type": "date",
+      "nullable": true,
+      "format": "ISO-8601",
+      "constraints": null,
+      "cleaning_action": "parse mixed date formats to ISO-8601"
+    },
+    "code": {
+      "expected_type": "float",
+      "nullable": true,
+      "format": null,
+      "constraints": "must be positive",
+      "cleaning_action": "convert to float and fill nulls with 0"
+    },
+    "packaging": {
+      "expected_type": "string",
+      "nullable": true,
+      "format": null,
+      "constraints": null,
+      "cleaning_action": "fill nulls with 'Unknown' and standardize casing to lowercase"
+    }
+  },
+  "column_stats": {
+    "product_name": {
+      "dtype": "object",
+      "null_count": 8,
+      "null_pct": 4.0,
+      "unique_count": 22,
+      "total_rows": 200,
+      "sample_values": [
+        "Chocolate Bar",
+        "Olive Oil",
+        "Orange Juice",
+        "Whole Wheat Bread",
+        "Dark Chocolate"
+      ]
+    },
+    "brands": {
+      "dtype": "object",
+      "null_count": 21,
+      "null_pct": 10.5,
+      "unique_count": 9,
+      "total_rows": 200,
+      "sample_values": [
+        "NatureCo",
+        "NatureCo",
+        "  freshfarm",
+        "PureEats",
+        "HealthyChoice"
+      ]
+    },
+    "categories": {
+      "dtype": "object",
+      "null_count": 63,
+      "null_pct": 31.5,
+      "unique_count": 6,
+      "total_rows": 200,
+      "sample_values": [
+        "dairy products",
+        "BEVERAGES",
+        "BEVERAGES",
+        "snacks",
+        "dairy products"
+      ]
+    },
+    "quantity": {
+      "dtype": "object",
+      "null_count": 45,
+      "null_pct": 22.5,
+      "unique_count": 10,
+      "total_rows": 200,
+      "sample_values": [
+        "100",
+        "100 grams",
+        "100 grams",
+        "100ml",
+        "0.1 kg"
+      ]
+    },
+    "serving_size": {
+      "dtype": "object",
+      "null_count": 25,
+      "null_pct": 12.5,
+      "unique_count": 10,
+      "total_rows": 200,
+      "sample_values": [
+        "2 tbsp",
+        "2 tbsp",
+        "0.1 kg",
+        "1 cup",
+        "100 grams"
+      ]
+    },
+    "energy_100g": {
+      "dtype": "object",
+      "null_count": 13,
+      "null_pct": 6.5,
+      "unique_count": 166,
+      "total_rows": 200,
+      "sample_values": [
+        "875.8904585556064",
+        "587.3619925956502",
+        "822.952849359467",
+        "118.4450271911696",
+        "310.3754877857449"
+      ]
+    },
+    "fat_100g": {
+      "dtype": "object",
+      "null_count": 14,
+      "null_pct": 7.0,
+      "unique_count": 135,
+      "total_rows": 200,
+      "sample_values": [
+        "27.1",
+        "25.1",
+        "4.9",
+        "16.8",
+        "21.2"
+      ]
+    },
+    "sugars_100g": {
+      "dtype": "object",
+      "null_count": 15,
+      "null_pct": 7.5,
+      "unique_count": 138,
+      "total_rows": 200,
+      "sample_values": [
+        "44.0",
+        "45.8",
+        "57.6",
+        "7.3",
+        "56.9"
+      ]
+    },
+    "proteins_100g": {
+      "dtype": "object",
+      "null_count": 22,
+      "null_pct": 11.0,
+      "unique_count": 131,
+      "total_rows": 200,
+      "sample_values": [
+        "8.2",
+        "8.5",
+        "1.6",
+        "28.7",
+        "16.8"
+      ]
+    },
+    "nutrition_grade_fr": {
+      "dtype": "object",
+      "null_count": 43,
+      "null_pct": 21.5,
+      "unique_count": 8,
+      "total_rows": 200,
+      "sample_values": [
+        "unknown",
+        "d",
+        "c",
+        "A",
+        "e"
+      ]
+    },
+    "countries": {
+      "dtype": "object",
+      "null_count": 50,
+      "null_pct": 25.0,
+      "unique_count": 7,
+      "total_rows": 200,
+      "sample_values": [
+        "USA",
+        "France",
+        "France",
+        "France",
+        "USA"
+      ]
+    },
+    "last_modified_datetime": {
+      "dtype": "object",
+      "null_count": 42,
+      "null_pct": 21.0,
+      "unique_count": 8,
+      "total_rows": 200,
+      "sample_values": [
+        "2024/01/15",
+        "15/01/2024",
+        "2024-01-15",
+        "15/01/2024",
+        "2024/01/15"
+      ]
+    },
+    "code": {
+      "dtype": "float64",
+      "null_count": 8,
+      "null_pct": 4.0,
+      "unique_count": 174,
+      "total_rows": 200,
+      "sample_values": [
+        "2203388955030.0",
+        "2832085087916.0",
+        "6466826988627.0",
+        "8240394411108.0",
+        "9841989358937.0"
+      ],
+      "min": 1057783303331.0,
+      "max": 9921936948112.0
+    },
+    "packaging": {
+      "dtype": "object",
+      "null_count": 47,
+      "null_pct": 23.5,
+      "unique_count": 6,
+      "total_rows": 200,
+      "sample_values": [
+        "Cardboard",
+        "Glass",
+        "Cardboard",
+        "Cardboard",
+        "Plastic"
+      ]
+    },
+    "__duplicates__": {
+      "duplicate_rows": 18,
+      "duplicate_pct": 9.0
+    }
+  }
+}
