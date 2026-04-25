@@ -1,0 +1,80 @@
+{
+  "dataset": {
+    "rows_before": 200,
+    "rows_after": 182,
+    "columns_before": 14,
+    "columns_after": 14
+  },
+  "nulls": {
+    "total_before": 416,
+    "total_after": 193,
+    "fixed": 223,
+    "fix_rate": "53.6%"
+  },
+  "duplicates": {
+    "before": 18,
+    "after": 0,
+    "removed": 18
+  },
+  "quality_score": {
+    "overall": 92.4,
+    "per_column": [
+      {
+        "column": "product_name",
+        "score": 100.0
+      },
+      {
+        "column": "brands",
+        "score": 89.0
+      },
+      {
+        "column": "categories",
+        "score": 100.0
+      },
+      {
+        "column": "quantity",
+        "score": 100.0
+      },
+      {
+        "column": "serving_size",
+        "score": 100.0
+      },
+      {
+        "column": "energy_100g",
+        "score": 100.0
+      },
+      {
+        "column": "fat_100g",
+        "score": 100.0
+      },
+      {
+        "column": "sugars_100g",
+        "score": 100.0
+      },
+      {
+        "column": "proteins_100g",
+        "score": 100.0
+      },
+      {
+        "column": "nutrition_grade_fr",
+        "score": 100.0
+      },
+      {
+        "column": "countries",
+        "score": 100.0
+      },
+      {
+        "column": "last_modified_datetime",
+        "score": 4.9
+      },
+      {
+        "column": "code",
+        "score": 100.0
+      },
+      {
+        "column": "packaging",
+        "score": 100.0
+      }
+    ]
+  }
+}
